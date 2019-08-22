@@ -38,7 +38,12 @@ pip3 install -r requirements.txt
 ```
 - chanfe ansible.cfg
    - add path to key
-*private_key_file=/Users/egorbukatkin/Programming/kyriba_test_task/test-machine.pem*
+```shell script
+vim ${git_root}/project/myenv/ansible.cfg
+```
+```shell script
+private_key_file=/Users/egorbukatkin/Programming/kyriba_test_task/test-machine.pem
+```
 - ping ansible:
 ```shell script
 cd ${git_root}/project/myenv
