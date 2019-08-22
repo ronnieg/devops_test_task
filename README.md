@@ -11,6 +11,13 @@ Create infrastructure and deploy stateful app in compliance with test task.
 ## Provisioning Infrastructure
 ```shell script
 cd ${git_root}/terraform_provisioning
+```
+- change file ${git_root}/terraform_provisioning/terraform.tfvars
+```
+shared_credentials_file = "/Users/egorbukatkin/.aws/credentials"
+```
+
+```shell script
 terraform init
 terraform plan
 terraform apply
