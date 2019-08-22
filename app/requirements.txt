@@ -1,0 +1,7 @@
+ansible
+boto
+boto3
+netaddr
+botocore
+awscli
+six
