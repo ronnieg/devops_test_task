@@ -57,5 +57,5 @@ ansible-playbook -v -i inventory/ec2.py -u ubuntu install_app.yml
 - Check application
 ```
 Open in browser:
-http://{ip-address}:80/
+http://{aws-ec2-ip-address}:80/
 ```
