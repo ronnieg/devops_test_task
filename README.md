@@ -36,7 +36,7 @@ cd ${git_root}/project/myenv
 source bin/activate
 pip3 install -r requirements.txt 
 ```
-- chanfe ansible.cfg
+- change ansible.cfg
    - add path to key
 ```shell script
 vim ${git_root}/project/myenv/ansible.cfg
@@ -52,4 +52,10 @@ ansible -v -i inventory/ec2.py -u ubuntu us-east-1a -m ping
 - run playbook:
 ```shell script
 ansible-playbook -v -i inventory/ec2.py -u ubuntu install_app.yml
+```
+
+- Check application
+```
+Open in browser:
+http://{ip-address}:80/
 ```
