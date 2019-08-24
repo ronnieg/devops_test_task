@@ -17,7 +17,7 @@ resource "aws_subnet" "subnet_test" {
     cidr_block = "${var.public_subnet_cidr}"
     availability_zone = "us-east-1a"
 
-    tags {
+    tags = {
         Name = "test_public_subnet"
     }
 }
@@ -47,7 +47,7 @@ resource "aws_security_group" "test_security_group" {
 
     vpc_id = "${aws_vpc.test_vpc.id}"
 
-    tags {
+    tags = {
         Name = "test_security_group"
     }
 }
@@ -61,7 +61,7 @@ resource "aws_instance" "test_machine" {
   associate_public_ip_address = true
   source_dest_check = false
   key_name = "${var.aws-key-name}"
-  root_block_device = {
+  root_block_device {
     volume_size = 8
   }
   tags = {
@@ -77,7 +77,7 @@ resource "aws_route_table" "us-east-1a-public" {
         gateway_id = "${aws_internet_gateway.test_gateway.id}"
     }
 
-    tags {
+    tags = {
         Name = "Public Subnet"
     }
 }

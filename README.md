@@ -7,14 +7,10 @@ Create infrastructure and deploy stateful app in compliance with test task.
 - create IAM user 
 - create key pair like key.pem
 - git clone project
-- copy key.pem to ${git_root}/terraform_provisioning folder
+- TF_VAR_shared_credentials_file (i.e.:export TF_VAR_shared_credentials_file="/Users/egorbukatkin/.aws/credentials")
 ## Provisioning Infrastructure
 ```shell script
 cd ${git_root}/terraform_provisioning
-```
-- change file ${git_root}/terraform_provisioning/terraform.tfvars
-```
-shared_credentials_file = "/Users/egorbukatkin/.aws/credentials"
 ```
 
 ```shell script

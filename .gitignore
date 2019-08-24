@@ -1,3 +1,6 @@
 .idea/
 .terraform_provisioning/test-machine.pem
 .project/
+.terraform/
+/terraform_provisioning/terraform.tfstate
+/terraform_provisioning/terraform.tfstate.backup
