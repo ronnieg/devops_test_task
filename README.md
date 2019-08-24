@@ -39,7 +39,11 @@ cd ${git_root}/project/myenv
 source bin/activate
 pip3 install -r requirements.txt 
 ```
-- If necessary change files  ${git_root}/project/myenv/group_vars for add new specific server user or new group.
+- Change ansible_private_key_file in ${git_root}/project/myenv/group_vars/us-east-1 like ansible_private_key_file : /Users/egorbukatkin/Programming/kyriba_test_task/test-machine.pem
+```shell script
+vim ${git_root}/project/myenv/group_vars/us-east-1
+```
+- If necessary change files in ${git_root}/project/myenv/group_vars for add new specific server user or new group.
 - ping ansible:
 ```shell script
 cd ${git_root}/project/myenv
