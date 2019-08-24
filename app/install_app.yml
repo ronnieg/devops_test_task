@@ -1,38 +1,8 @@
 ---
-- hosts: tag_Env_STAGING
+- hosts: all
   become: true
   gather_facts: no
-  vars:
-    src_path: "/Users/egorbukatkin/Programming/kyriba_test_task/project/myenv/docker_compose"
-    des_path: "/opt"  
-  tasks:
-    - name: Install aptitude using apt
-      apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
 
-    - name: Install required system packages
-      apt: name={{ item }} state=latest update_cache=yes
-      loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'python3-pip', 'virtualenv', 'python3-setuptools']
+  roles:
+    - { role: install_app, when: ansible_system == 'Linux' }
 
-    - name: Add Docker GPG apt Key
-      apt_key:
-        url: https://download.docker.com/linux/ubuntu/gpg
-        state: present
-
-    - name: Add Docker Repository
-      apt_repository:
-        repo: deb https://download.docker.com/linux/ubuntu bionic stable
-        state: present
-
-    - name: Update apt and install docker-ce
-      apt: update_cache=yes name=docker-ce state=latest
-
-    - name: Update apt and install docker-compose
-      apt: update_cache=yes name=docker-compose state=latest
-
-    - name: Ansible copy directory to the remote server
-      copy:
-        src: /Users/egorbukatkin/Programming/kyriba_test_task/project/myenv/docker_compose
-        dest: /opt/  
-
-    - name: Run docker-compose
-      shell: '/bin/bash /opt/docker_compose/run.sh'
