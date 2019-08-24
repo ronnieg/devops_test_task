@@ -1,0 +1,2 @@
+---
+ansible_private_key_file : /Users/egorbukatkin/Programming/kyriba_test_task/test-machine.pem

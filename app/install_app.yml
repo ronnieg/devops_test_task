@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: tag_Env_STAGING
   become: true
   gather_facts: no
   vars:
