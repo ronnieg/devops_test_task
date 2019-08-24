@@ -78,7 +78,7 @@ resource "aws_route_table" "us-east-1a-public" {
     }
 
     tags = {
-        Name = "Public Subnet",
+        Name = "Public Subnet"
         Env = "STAGING"
     }
 }

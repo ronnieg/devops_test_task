@@ -7,7 +7,7 @@ Create infrastructure and deploy stateful app in compliance with test task.
 - create IAM user 
 - create key pair like key.pem
 - git clone project
-- export shell variable TF_VAR_shared_credentials_file (i.e.:export TF_VAR_shared_credentials_file="/Users/egorbukatkin/.aws/credentials")
+- export shell variable TF_VAR_shared_credentials_file (i.e.: export TF_VAR_shared_credentials_file="/Users/egorbukatkin/.aws/credentials")
 ## Provisioning Infrastructure
 ```shell script
 cd ${git_root}/terraform_provisioning
@@ -39,22 +39,15 @@ cd ${git_root}/project/myenv
 source bin/activate
 pip3 install -r requirements.txt 
 ```
-- change ansible.cfg
-   - add path to key
-```shell script
-vim ${git_root}/project/myenv/ansible.cfg
-```
-```shell script
-private_key_file=/Users/egorbukatkin/Programming/kyriba_test_task/test-machine.pem
-```
+- If necessary change files  ${git_root}/project/myenv/group_vars for add new specific server user or new group.
 - ping ansible:
 ```shell script
 cd ${git_root}/project/myenv
-ansible -v -i inventory/ec2.py -u ubuntu us-east-1a -m ping
+ansible -v -i inventory/ec2.py us-east-1 -m ping
 ```
 - run playbook:
 ```shell script
-ansible-playbook -v -i inventory/ec2.py -u ubuntu install_app.yml
+ansible-playbook -v -i inventory/ec2.py -l us-east-1  install_app.yml
 ```
 
 - Check application

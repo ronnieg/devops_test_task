@@ -4,5 +4,5 @@
   gather_facts: no
 
   roles:
-    - { role: install_app, when: ansible_system == 'Linux' }
+    - role: install_app
 
