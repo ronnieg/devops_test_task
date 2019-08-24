@@ -39,7 +39,7 @@ cd ${git_root}/project/myenv
 source bin/activate
 pip3 install -r requirements.txt 
 ```
-- Change ansible_private_key_file in ${git_root}/project/myenv/group_vars/us-east-1 like ansible_private_key_file : /Users/egorbukatkin/Programming/kyriba_test_task/test-machine.pem
+- Change ansible_private_key_file in ${git_root}/project/myenv/group_vars/us-east-1 (i.e.: ansible_private_key_file : /Users/egorbukatkin/Programming/kyriba_test_task/test-machine.pem)
 ```shell script
 vim ${git_root}/project/myenv/group_vars/us-east-1
 ```
