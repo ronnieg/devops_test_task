@@ -66,6 +66,7 @@ resource "aws_instance" "test_machine" {
   }
   tags = {
     Name = "test_machine"
+    "Env" = "EGOR_TEST_STAGING"
   }
 }
 
@@ -79,7 +80,6 @@ resource "aws_route_table" "us-east-1a-public" {
 
     tags = {
         Name = "Public Subnet"
-        Env = "STAGING"
     }
 }
 
