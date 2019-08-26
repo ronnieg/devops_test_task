@@ -41,7 +41,7 @@ pip3 install -r requirements.txt
 ```
 - Change ansible_private_key_file in ${git_root}/project/myenv/group_vars/tag_Env_EGOR_TEST_STAGING (i.e.: ansible_private_key_file : /Users/egorbukatkin/Programming/kyriba_test_task/test-machine.pem)
 ```shell script
-vim ${git_root}/project/myenv/group_vars/us-east-1
+vim ${git_root}/project/myenv/group_vars/tag_Env_EGOR_TEST_STAGING
 ```
 - If necessary change files in ${git_root}/project/myenv/group_vars for add new specific server user or new group.
 - ping ansible:
